@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "ir.erfansn.composepager"
+    namespace = "ir.erfansn.composepagereffects"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "ir.erfansn.composepager"
+        applicationId = "ir.erfansn.composepagereffects"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -36,6 +36,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs += "-Xcontext-receivers"
     }
     buildFeatures {
         compose = true

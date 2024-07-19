@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ComposePager"
+rootProject.name = "ComposePagerEffects"
 include(":app")
  

@@ -1,27 +1,26 @@
-package ir.erfansn.composepager
+package ir.erfansn.composepagereffects
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import ir.erfansn.composepager.ui.theme.ComposePagerTheme
+import ir.erfansn.composepagereffects.ui.theme.ComposePagerEffectsTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            ComposePagerTheme {
+            ComposePagerEffectsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    PagersScreen(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -31,17 +30,18 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun PagersScreen(modifier: Modifier = Modifier) {
+    Column(modifier = modifier.fillMaxSize()) {
+        PlainHorizontalPager(modifier = Modifier.weight(1f))
+        ScaledHorizontalPager(modifier = Modifier.weight(1f))
+    }
 }
+
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    ComposePagerTheme {
-        Greeting("Android")
+    ComposePagerEffectsTheme {
+        PagersScreen()
     }
 }

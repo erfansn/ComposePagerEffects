@@ -1,4 +1,4 @@
-package ir.erfansn.composepager.ui.theme
+package ir.erfansn.composepagereffects.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

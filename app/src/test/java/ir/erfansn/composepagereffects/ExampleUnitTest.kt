@@ -1,4 +1,4 @@
-package ir.erfansn.composepager
+package ir.erfansn.composepagereffects
 
 import org.junit.Test
 
