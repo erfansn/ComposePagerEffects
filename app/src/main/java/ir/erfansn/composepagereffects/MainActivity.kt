@@ -4,13 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import ir.erfansn.composepagereffects.ui.theme.ComposePagerEffectsTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,9 +35,15 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PagersScreen(modifier: Modifier = Modifier) {
-    Column(modifier = modifier.fillMaxSize()) {
-        PlainHorizontalPager(modifier = Modifier.weight(1f))
-        ScaledHorizontalPager(modifier = Modifier.weight(1f))
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        PlainHorizontalPager()
+        ScaledHorizontalPager()
+        ClosingTranslationHorizontalPager()
     }
 }
 
