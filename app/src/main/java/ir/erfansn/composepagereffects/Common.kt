@@ -37,8 +37,8 @@ fun PaddingAroundHorizontalPagerWithTitle(
             state = pagerState,
             modifier = Modifier
                 .height(240.dp),
-            pageSpacing = 24.dp,
-            contentPadding = PaddingValues(horizontal = 60.dp),
+            pageSpacing = 12.dp,
+            contentPadding = PaddingValues(horizontal = 48.dp),
             pageContent = pageContent
         )
     }
