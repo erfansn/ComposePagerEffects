@@ -2,14 +2,10 @@ package ir.erfansn.composepagereffects
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.material3.Card
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
@@ -28,7 +24,8 @@ fun ScaledHorizontalPager(modifier: Modifier = Modifier) {
         pagerState = pagerState,
         modifier = modifier
     ) {
-        Card(
+        PlainPage(
+            pageIndex = it,
             modifier = Modifier
                 .fillMaxSize()
                 .border(2.dp, Color.Blue)
@@ -37,16 +34,7 @@ fun ScaledHorizontalPager(modifier: Modifier = Modifier) {
                     scaleX = scale
                     scaleY = scale
                 }
-        ) {
-            Box(
-                modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center,
-            ) {
-                Text(
-                    text = "Page $it"
-                )
-            }
-        }
+        )
     }
 }
 
